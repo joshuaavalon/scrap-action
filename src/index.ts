@@ -21,7 +21,9 @@ async function main(): Promise<void> {
     return;
   }
 
-  const waitUntil = process.env.INPUT_WAIT_UNTIL ?? "networkidle2";
+  const waitUntil = !process.env.INPUT_WAIT_UNTIL
+    ? "networkidle2"
+    : process.env.INPUT_WAIT_UNTIL;
   if (!isPuppeteerLifeCycleEvent(waitUntil)) {
     console.log(`Invalid ${waitUntil}`);
     return;

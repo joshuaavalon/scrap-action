@@ -1,0 +1,52 @@
+{
+  "name": "@joshuaavalon/scrap-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "type": "module",
+  "private": "true",
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "tsc",
+    "start": "node ./lib/index.js",
+    "lint": "eslint --ext .ts src",
+    "test": "mocha"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      }
+    }
+  },
+  "keywords": [
+    "depixy",
+    "depixy-plugin"
+  ],
+  "homepage": "https://github.com/joshuaavalon/scrap-action#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshuaavalon/scrap-action.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joshuaavalon/scrap-action/issues"
+  },
+  "author": "Joshua Avalon",
+  "license": "Apache-2.0",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "dependencies": {
+    "puppeteer": "^15.3.2"
+  },
+  "devDependencies": {
+    "@joshuaavalon/eslint-config-typescript": "^6.1.4",
+    "eslint": "^8.17.0",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.3"
+  }
+}

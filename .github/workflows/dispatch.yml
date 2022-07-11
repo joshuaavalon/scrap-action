@@ -1,0 +1,33 @@
+name: dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "URL to scrap"
+        required: true
+      wait_until:
+        description: "HTML wait to render"
+        required: false
+jobs:
+  scrap:
+    name: scrap
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run build
+      - run: npm run start
+        env:
+          INPUT_URL: ${{ github.event.inputs.url }}
+          INPUT_WAIT_UNTIL: ${{ github.event.inputs.wait_until }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: html
+          path: index.html
+      - uses: actions/upload-artifact@v3
+        with:
+          name: screenshot
+          path: index.png

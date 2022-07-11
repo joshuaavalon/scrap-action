@@ -8,9 +8,9 @@ function isPuppeteerLifeCycleEvent(
 ): value is PuppeteerLifeCycleEvent {
   return (
     value === "load" ||
-    value === "DOMContentLoaded" ||
-    value === "networkIdle" ||
-    value === "networkAlmostIdle"
+    value === "domcontentloaded" ||
+    value === "networkidle0" ||
+    value === "networkidle2"
   );
 }
 

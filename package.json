@@ -10,8 +10,7 @@
     "prebuild": "rimraf lib",
     "build": "tsc",
     "start": "node ./lib/index.js",
-    "lint": "eslint --ext .ts src",
-    "test": "mocha"
+    "lint": "eslint --ext .ts src"
   },
   "exports": {
     ".": {
@@ -21,10 +20,7 @@
       }
     }
   },
-  "keywords": [
-    "depixy",
-    "depixy-plugin"
-  ],
+  "keywords": [],
   "homepage": "https://github.com/joshuaavalon/scrap-action#readme",
   "repository": {
     "type": "git",

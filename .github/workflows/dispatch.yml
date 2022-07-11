@@ -25,9 +25,7 @@ jobs:
           INPUT_WAIT_UNTIL: ${{ github.event.inputs.wait_until }}
       - uses: actions/upload-artifact@v3
         with:
-          name: html
-          path: index.html
-      - uses: actions/upload-artifact@v3
-        with:
-          name: screenshot
-          path: index.png
+          name: result
+          path: |
+            index.html
+            index.png
